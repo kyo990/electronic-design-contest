@@ -1,8 +1,34 @@
-# work1 起点：Wokwi 新建 Pico + MicroPython 工程自带的模板
-# 请按《闯关指南.md》逐关替换成自己的代码，不要直接抄成品。
-
+from machine import Pin
 import time
 
-time.sleep(0.1)  # Wait for USB to become ready
+DELAY = 1
+PINS = (Pin(10, Pin.OUT), Pin(11, Pin.OUT), Pin(12, Pin.OUT))
+SINGLE = ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+BLINK_TIMES = 3
+PAIRS = ((1, 1, 0), (0, 1, 1), (1, 0, 1))
 
-print("Hello, Pi Pico!")
+
+def set_all(value):
+    for pin in PINS:
+        pin.value(value)
+
+
+def show(color):
+    for pin, value in zip(PINS, color):
+        pin.value(value)
+    time.sleep(DELAY)
+    set_all(0)
+
+
+while True:
+    for color in SINGLE:
+        show(color)
+
+    for _ in range(BLINK_TIMES):
+        set_all(1)
+        time.sleep(DELAY)
+        set_all(0)
+        time.sleep(DELAY)
+
+    for color in PAIRS:
+        show(color)
