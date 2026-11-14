@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Wokwi firmware (large binary, re-download by version)
+work 01/firmware/
+**/firmware/*.uf2
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Temporary Wokwi export (use diagram.json / main.py in the repo)
+work 01/project/
+work 01/project.zip
+
+# Course task book (not redistributed in the public repository)
+work 01/Wokwi点亮RGB灯训练任务书.pdf
