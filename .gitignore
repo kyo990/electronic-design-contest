@@ -3,10 +3,6 @@ __pycache__/
 *.py[cod]
 .venv/
 
-# Wokwi firmware (large binary, re-download by version)
-work 01/firmware/
-**/firmware/*.uf2
-
 # Logs and OS files
 *.log
 .DS_Store

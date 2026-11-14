@@ -44,35 +44,12 @@ Wokwi 元件类型：
 | G |  |  |
 | B |  |  |
 
-## 运行方式
-
-### 方式一：Wokwi 在线版
+## 运行方式（Wokwi 网页版）
 
 1. 打开 <https://wokwi.com/>，登录后新建 Raspberry Pi Pico + MicroPython 工程。
 2. 在 `diagram.json` 对应的图形界面中摆元件、接线。
 3. 把 `main.py` 粘贴到在线编辑器中，点击运行。
 4. 在线验证通过后，把 `main.py` 和 `diagram.json` 同步回本目录。
-
-### 方式二：VS Code + Wokwi 插件
-
-1. 用 VS Code 打开 `d:\EC\work 01` 作为工作区。
-2. 安装 **Wokwi for VS Code** 扩展，申请免费 license。
-3. 下载 Pico MicroPython 固件，放到 `firmware/` 目录（固件不入库）。
-4. 确认 `wokwi.toml` 中的文件名与实际固件一致。
-5. 在命令面板执行 **Wokwi: Start Simulator**。
-6. 另开终端运行：
-
-   ```bash
-   python -m mpremote connect port:rfc2217://localhost:4000 run main.py
-   ```
-
-注意：仿真标签页必须保持可见，否则 Wokwi 会暂停，`mpremote` 会超时。
-
-### 固件版本
-
-- 文件：`RPI_PICO-20260824-v1.29.0.uf2`
-- 来源：<https://github.com/wokwi/wokwi-vscode-micropython/tree/main/pi-pico>
-- 说明：二进制固件不提交到 git；换版本时同步修改 `wokwi.toml`。
 
 ## 本目录文件
 
@@ -81,10 +58,8 @@ Wokwi 元件类型：
 | `闯关指南.md` | 六关学习路径、填空骨架、验收点、排错表 |
 | `main.py` | MicroPython 程序（起点模板，按关卡逐步替换） |
 | `diagram.json` | 电路连线（已按共阴 RGB + GP10/11/12 配置） |
-| `wokwi.toml` | VS Code 仿真配置 |
 | `README.md` | 任务、接线、运行方式 |
-| `NOTES.md` | 学习记录、排错记录、总结 |
-| `firmware/` | Pico MicroPython 固件（不入库） |
+| `NOTES.md` | 可选的学习记录模板 |
 
 ## 验收清单
 
@@ -98,9 +73,7 @@ Wokwi 元件类型：
 - [ ] 全亮/全灭为通用循环写法，没有三行重复赋值
 - [ ] 最大缩进不超过两层
 - [ ] 修改 `DELAY` 后闪烁速度确实变化
-- [ ] `NOTES.md` 含接错次数、排查过程、0.05 秒实验结论
-- [ ] VS Code 仿真可运行，现象与在线版一致
-- [ ] 固件未入库
+- [ ] 在线仿真中完整循环播放，颜色顺序正确
 
 ## 开源许可
 
