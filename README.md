@@ -20,6 +20,11 @@
 - [Wokwi 点亮 RGB 灯闯关指南](work%2001/闯关指南.md)
 - [接线表、运行方式与验收清单](work%2001/README.md)
 
+## work2 学习资料
+
+- [Wokwi 软件 PWM 呼吸灯闯关指南](work%2002/闯关指南.md)
+- [任务、常量、运行方式与验收清单](work%2002/README.md)
+
 ## 开源许可
 
 本项目采用 [MIT License](LICENSE)。
