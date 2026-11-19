@@ -1,14 +1,23 @@
-# work2 起点：软件 PWM 呼吸灯
-# 本文件只完成第 1 关的闪烁基线，用来确认红灯确实接在 GP10。
-# 请按《闯关指南.md》逐关实现 PWM，不要直接抄成品。
-
 from machine import Pin
 import time
 
+T_MS = 20
+N = 100
+STEP_US = T_MS * 1000 // N
+DUTY_STEP = 1
+
 led = Pin(10, Pin.OUT)   # 红灯：GP10，串 220Ω
 
+
+def frame(duty):
+    on = duty * N // 100
+    for i in range(N):
+        led.value(1 if i < on else 0)
+        time.sleep_us(STEP_US)
+
+
 while True:
-    led.value(1)
-    time.sleep_ms(500)
-    led.value(0)
-    time.sleep_ms(500)
+    for duty in range(0, 101, DUTY_STEP):
+        frame(duty)
+    for duty in range(100, -1, -DUTY_STEP):
+        frame(duty)
