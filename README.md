@@ -25,6 +25,11 @@
 - [Wokwi 软件 PWM 呼吸灯闯关指南](work%2002/闯关指南.md)
 - [任务、常量、运行方式与验收清单](work%2002/README.md)
 
+## work3 学习资料
+
+- [Wokwi 定时器中断 PWM 闯关指南](work%2003/闯关指南.md)
+- [任务、常量、频率换算、运行方式与验收清单](work%2003/README.md)
+
 ## 开源许可
 
 本项目采用 [MIT License](LICENSE)。
