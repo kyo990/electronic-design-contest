@@ -16,3 +16,6 @@ work 01/project.zip
 work 01/Wokwi点亮RGB灯训练任务书.pdf
 work 02/Wokwi第二周任务书.pdf
 work 03/Wokwi第三周任务书.pdf
+
+# Local git bundle archive (not part of the project)
+*.bundle
